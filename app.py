@@ -1,3 +1,4 @@
+
 #______________________Importing the required Libraries________________________
 import streamlit as st
 import pandas as pd
@@ -92,6 +93,7 @@ def home():
     st.plotly_chart(printBubbleScatter(df,selected_continents), use_container_width=True)
     
 
+#_____________________________DATA SUMMARY PAGE________________________________
 
 # function  summary/stats
 def data_summary(df,selected_continents):
@@ -162,7 +164,7 @@ def pie(df,selected_continents):
     return piefig
 
 
-#### SIDEBAR
+#__________________________________SIDEBAR_____________________________________
 
 #filtering date and time
 df['date'] = pd.to_datetime(df['date'])
@@ -204,3 +206,4 @@ if options == 'Home':
     home()
 elif options == 'Data Summary':
     data_summary(df,selected_continents)
+
