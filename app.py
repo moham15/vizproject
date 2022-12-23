@@ -70,7 +70,7 @@ def home():
     # Display the density map with only the selected earthquake using the st.plotly_chart function
     st.header('Density Map')
     st.plotly_chart(printDensityMap(df,selected_continents), use_container_width=True)    
-    
+    st.write('Please note that z value is magnitude')
     # dividing content in two columns
     col1, col2 = st.columns(2)
 
@@ -206,4 +206,6 @@ if options == 'Home':
     home()
 elif options == 'Data Summary':
     data_summary(df,selected_continents)
+
+
 
