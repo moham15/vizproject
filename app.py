@@ -19,7 +19,7 @@ df = df.drop(columns=["magType", "nst", "dmin", "rms", "net", "id", "horizontalE
                       "depthError", "magError", "magNst", "locationSource", "magSource", "gap"])
 
 # filtering the place column so only the place shows in the field or in this case the last word in the column
-df['place'] = df['place'].str.replace(r'^[^,]*,\s*', '')
+df['place'] = df['place'].str.replace(r'^[^,]*,\s*', '', regex=True)
 # sorting the places in alphabetic order
 df = df.sort_values('place')
     
